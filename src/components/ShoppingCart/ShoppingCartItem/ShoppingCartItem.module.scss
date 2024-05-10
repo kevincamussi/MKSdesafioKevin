@@ -1,0 +1,40 @@
+@use '../../../styles/variables.scss' as variables;
+
+.shoppingCartItem {
+    background-color: variables.$white;
+    color: variables.$primaryColor;
+    border-radius: 8px;
+    margin: 0 auto;
+    @include variables.displayFlex;
+    justify-content: space-around;
+    position: relative;
+
+    .shoppingCartItemButton {
+        @include variables.buttonClose;
+        top: -4px;
+        right: -4px;
+        width: 18px;
+        height: 18px;
+        padding: 2px;
+        font-size: 8px;
+    }
+
+    .shoppingCartItemName {
+        color: variables.$primaryColor;
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    .itemsQuantity {
+        span {
+            color: variables.$black;
+        }
+
+        .quantity {
+            width: 50px;
+            height: 19px;
+            border: 1px solid variables.$borderColor;
+            border-radius: 4px;
+        }
+    }
+}

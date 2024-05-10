@@ -1,0 +1,20 @@
+@use '../../styles/variables.scss' as variables;
+
+.shoppingCart {
+    background-color: variables.$blue;
+    width: 486px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 48px;
+    font-family: Montserrat;
+    font-weight: 700;
+    box-shadow: -5px 0px 6px 0px #00000022;
+
+
+    .shoppingCartButton {
+        @include variables.buttonClose;
+        top: 48px;
+        right: 48px;
+    }
+}

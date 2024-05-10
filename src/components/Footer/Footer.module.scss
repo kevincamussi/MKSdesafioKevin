@@ -1,0 +1,13 @@
+@use '../../styles/variables.scss' as variables;
+
+.footer {
+    background-color: variables.$footerColor;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 8px;
+
+    .footerText {
+        color: variables.$black;
+    }
+}

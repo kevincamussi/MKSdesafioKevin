@@ -3,12 +3,31 @@
     $grey: #F9F9F9;
     $black: #000;
     $lightGrey: #00000022;
+    $footerColor: #EEEEEE;
     $primaryColor: #2C2C2C;
-
-
+    $secondaryColor: #373737;
+    $borderColor: #BFBFBF;
 
     @mixin displayFlex {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    @mixin buttonClose {
+        background-color: $black;
+        color: $white;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+        font-weight: 400;
+        padding: 4px;
+        cursor: pointer;
+        position: absolute;
+        border: none;
+
+        &:hover {
+            background-color: lighten($color: $black, $amount: 30%);
+        }
     }
