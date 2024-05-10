@@ -3,18 +3,23 @@
 .shoppingCart {
     background-color: variables.$blue;
     width: 486px;
+    height: 100%;
     position: absolute;
     top: 0;
     right: 0;
     padding: 48px;
     font-family: Montserrat;
-    font-weight: 700;
     box-shadow: -5px 0px 6px 0px #00000022;
 
+    .shoppingCartText {
+        font-style: 27px;
+        font-weight: 700;
+        margin-bottom: 64px;
+    }
 
     .shoppingCartButton {
         @include variables.buttonClose;
         top: 48px;
-        right: 48px;
+        right: 24px;
     }
 }

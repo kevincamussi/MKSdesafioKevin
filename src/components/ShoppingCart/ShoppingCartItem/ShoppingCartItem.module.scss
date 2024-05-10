@@ -9,6 +9,7 @@
     justify-content: space-around;
     position: relative;
 
+
     .shoppingCartItemButton {
         @include variables.buttonClose;
         top: -4px;
@@ -20,9 +21,9 @@
     }
 
     .shoppingCartItemName {
+        font-weight: 400;
         color: variables.$primaryColor;
         font-size: 13px;
-        font-weight: 400;
     }
 
     .itemsQuantity {
@@ -31,10 +32,14 @@
         }
 
         .quantity {
+            font-weight: 400;
+            font-size: 12px;
+            text-align: center;
             width: 50px;
             height: 19px;
             border: 1px solid variables.$borderColor;
             border-radius: 4px;
+            border: 0.2px solid #BFBFBF
         }
     }
 }

@@ -15,7 +15,8 @@ export const ShoppingCartItem = () => {
                     <span>Qtd:</span>
                     <div className={quantity}>
                         <span>-</span>
-                        <span>l 1 |</span>
+                        <span>|</span>
+                        <span>1</span>
                         <span>+</span>
                     </div>
                 </div>
