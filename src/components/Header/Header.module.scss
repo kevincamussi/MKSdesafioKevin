@@ -1,0 +1,45 @@
+@use '../../styles/variables.scss' as variables;
+
+.header {
+    @include variables.displayFlex;
+    background-color: variables.$blue;
+    width: 100%;
+    line-height: 101px;
+    padding: 0 88px 0 65px;
+
+    .logo {
+        font-size: 40px;
+        font-weight: 600;
+        display: inline;
+        margin-top: 400px;
+
+        .logoText {
+            font-size: 20px;
+            font-weight: 300;
+            margin-left: 8px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    .cartButton {
+        @include variables.displayFlex;
+        justify-content: center;
+        width: 90px;
+        height: 45px;
+        border-radius: 8px;
+        border-color: transparent;
+        color: variables.$black;
+        font-size: 18px;
+        font-weight: 700;
+
+        &:hover {
+            cursor: pointer;
+            border-color: variables.$black;
+        }
+
+        .cartImg {
+            margin-right: 16px;
+        }
+    }
+}

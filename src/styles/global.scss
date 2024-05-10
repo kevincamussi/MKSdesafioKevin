@@ -1,0 +1,19 @@
+@use './variables.scss' as variables;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: variables.$white;
+}
+
+body {
+    background-color: variables.$grey;
+}
+
+.container {
+    max-width: 1440px;
+}

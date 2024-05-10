@@ -1,0 +1,14 @@
+    $blue: #0F52BA;
+    $white: #fff;
+    $grey: #F9F9F9;
+    $black: #000;
+    $lightGrey: #00000022;
+    $primaryColor: #2C2C2C;
+
+
+
+    @mixin displayFlex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }

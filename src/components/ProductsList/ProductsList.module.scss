@@ -1,0 +1,46 @@
+@use '../../styles/variables.scss' as variables;
+
+.products {
+    padding: 116px 210px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 218px);
+    justify-content: center;
+    gap: 20px;
+
+    .productsContainer {
+        padding: 12px 16px;
+    }
+
+    .productCard {
+        box-shadow: 0px 2px 8px 0px variables.$lightGrey;
+        border-radius: 8px;
+
+        .productImg {
+            display: block;
+            margin: 18px auto;
+        }
+
+        .productName {
+            font-weight: 400;
+            font-size: 16px;
+            color: variables.$primaryColor;
+        }
+
+        .productDescription {
+            color: variables.$primaryColor;
+            font-size: 10px;
+            font-weight: 300;
+        }
+
+        .productPrice {
+            background-color: red;
+        }
+
+        .productCardButton {
+            width: 100%;
+            background-color: variables.$blue;
+            border-color: transparent;
+            border-radius: 0 0 8px 8px;
+        }
+    }
+}
