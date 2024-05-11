@@ -1,8 +1,13 @@
 import styles from './Header.module.scss';
+import { IProps } from '../../interface/IProps';
 
 const { header, logo, logoText, cartButton, cartImg } = styles;
 
-export const Header = () => {
+
+
+export const Header = ({ handleClick }: IProps) => {
+
+
     return (
         <header className={header}>
             <div>
@@ -13,7 +18,7 @@ export const Header = () => {
                 </h1>
             </div>
             <div>
-                <button className={cartButton}>
+                <button className={cartButton} onClick={handleClick}  >
                     <img className={cartImg} src="./src/assets/Vector.png" alt="Carrinho de compras" />
                     0
                 </button>
