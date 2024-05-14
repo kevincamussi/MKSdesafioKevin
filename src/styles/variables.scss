@@ -31,3 +31,13 @@
             background-color: lighten($color: $black, $amount: 30%);
         }
     }
+
+    @mixin quantityButton {
+        border: none;
+        background-color: transparent;
+        color: black;
+        padding: 0 8px;
+        cursor: pointer;
+
+
+    }

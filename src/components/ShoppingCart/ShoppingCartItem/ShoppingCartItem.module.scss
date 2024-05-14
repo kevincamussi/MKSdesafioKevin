@@ -1,19 +1,21 @@
 @use '../../../styles/variables.scss' as variables;
 
 .shoppingCartItem {
+    @include variables.displayFlex;
     background-color: variables.$white;
     color: variables.$primaryColor;
+    width: 100%;
     border-radius: 8px;
-    margin: 0 auto;
-    @include variables.displayFlex;
+    margin: 8px auto;
     justify-content: space-around;
+    padding: 20px;
     position: relative;
 
 
     .shoppingCartItemButton {
         @include variables.buttonClose;
-        top: -4px;
-        right: -4px;
+        top: -6px;
+        right: -6px;
         width: 18px;
         height: 18px;
         padding: 2px;
@@ -24,6 +26,34 @@
         font-weight: 400;
         color: variables.$primaryColor;
         font-size: 13px;
+    }
+
+    .shoppingCartImg {
+        width: 50px;
+    }
+
+    .shoppingCartPrice {
+        color: variables.$black;
+    }
+
+    .itemQuantity {
+        padding: 10px;
+    }
+
+    .quantityBox {
+        border: 0.2px solid variables.$borderColor;
+        padding: 2px;
+        border-radius: 8px;
+    }
+
+    .minusButton {
+        @include variables.quantityButton;
+        border-right: 0.2px solid variables.$borderColor;
+    }
+
+    .plusButton {
+        @include variables.quantityButton;
+        border-left: 0.2px solid variables.$borderColor;
     }
 
     .itemsQuantity {

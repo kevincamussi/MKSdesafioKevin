@@ -3,11 +3,7 @@ import { IProps } from '../../interface/IProps';
 
 const { header, logo, logoText, cartButton, cartImg } = styles;
 
-
-
-export const Header = ({ handleClick }: IProps) => {
-
-
+export const Header = ({ handleClick, totalQuantity }: IProps) => {
     return (
         <header className={header}>
             <div>
@@ -20,7 +16,7 @@ export const Header = ({ handleClick }: IProps) => {
             <div>
                 <button className={cartButton} onClick={handleClick}  >
                     <img className={cartImg} src="./src/assets/Vector.png" alt="Carrinho de compras" />
-                    0
+                    {totalQuantity}
                 </button>
             </div>
         </header>

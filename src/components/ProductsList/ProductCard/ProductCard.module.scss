@@ -3,6 +3,7 @@
 .productCard {
     box-shadow: 0px 2px 8px 0px variables.$lightGrey;
     border-radius: 8px;
+    text-align: center;
 
     .productInfo {
         padding: 8px 16px;
@@ -11,8 +12,10 @@
 
         .productImg {
             width: 120px;
+            height: 120px;
             margin: 18px auto;
-
+            border: 1px solid variables.$borderColor;
+            border-radius: 4px
         }
 
         .productPriceBox {

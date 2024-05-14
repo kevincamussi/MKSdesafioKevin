@@ -1,14 +1,15 @@
 
+import { IProps } from '../../interface/IProps';
 import { ProductCard } from './ProductCard';
 import styles from './ProductsList.module.scss';
 
 const { products } = styles;
 
-export const ProductsList = () => {
+export const ProductsList = ({ handleClick }: IProps) => {
 
     return (
         <div className={products}>
-            <ProductCard />
+            <ProductCard handleClick={handleClick} productsInCart={undefined} />
         </div>
     )
 }
