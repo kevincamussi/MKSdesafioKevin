@@ -23,7 +23,6 @@
     .shoppingCartText {
         font-style: 27px;
         font-weight: 700;
-        margin-bottom: 64px;
         text-align: left;
     }
 
@@ -73,6 +72,21 @@
         }
     }
 
+
+    @media (max-width:350px) {
+        .shoppingCartItem {
+            width: 100%;
+            height: 55%;
+        }
+
+        .totalCartPrice {
+            // justify-content: space-around;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+
 }
 
 
@@ -97,5 +111,7 @@
         background-color: lighten($color: variables.$black, $amount: 20%);
     }
 
-
+    @media (max-width:350px) {
+        padding: 20px;
+    }
 }
