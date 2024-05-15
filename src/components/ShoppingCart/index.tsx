@@ -1,7 +1,6 @@
 import styles from './ShoppingCart.module.scss';
 import { ShoppingCartItem } from './ShoppingCartItem';
 import { IProps } from '../../interface/IProps';
-import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const { shoppingCart, shoppingCartText, shoppingCartButton, finishBuyButton, finishBuy, totalCartPrice, shoppingCartItem } = styles;
@@ -22,7 +21,6 @@ export const ShoppingCart = ({ handleClick, productsInCart, removeItem, addMoreI
                     <button className={shoppingCartButton} onClick={handleClick}>X</button>
                     {
                         <ShoppingCartItem productsInCart={productsInCart} removeItem={removeItem} addMoreItens={addMoreItens} deleteItem={deleteItem} />
-                        || <Skeleton />
                     }
                 </div>
                 <div className={totalCartPrice}>
