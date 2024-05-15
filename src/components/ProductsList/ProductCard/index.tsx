@@ -2,31 +2,21 @@ import styles from './ProductCard.module.scss';
 import { useFetch } from '../../../http/request';
 import { IProduct } from '../../../interface/IProducts';
 import { IProps } from '../../../interface/IProps';
-import Skeleton from 'react-loading-skeleton';
-import { useEffect, useState } from 'react';
 
 const { productInfo, productCard, productImg, productPriceBox, productName, productPrice, productDescription, productCardButton, productButtonImg } = styles;
 
 export const ProductCard = ({ handleClick }: IProps) => {
 
-    const { data } = useFetch<IProduct[]>('https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=id&orderBy=ASC');
-
-    const [isLoading, setIsLoading] = useState(true);
+    const { data } = useFetch<IProduct>('https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=id&orderBy=ASC');
 
 
-    useEffect(() => {
-        setIsLoading(false);
-
-    }, [data])
 
     return (
         <>
-            {/* setIsLoading(false); */}
-            {data?.products.map(item => {
+            {data?.products.map((item: { id: any; photo: any; name: any; price: any; description: any; }) => {
                 const { id, photo, name, price, description } = item;
                 return (
                     <div className={productCard} key={id} >
-                        {isLoading && <Skeleton count={3} />}
                         <div className={productInfo}>
                             <img className={productImg} src={photo} />
                             <div className={productPriceBox}>

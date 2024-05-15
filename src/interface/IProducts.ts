@@ -6,7 +6,10 @@ export interface IProduct {
         description: string;
         photo: string;
         price: number;
-        product: any;
-        quantity: number
+        products?: any;
+        quantity: number;
+        produtos: any;
+        map: any
     }
+    produtos: any;
 }

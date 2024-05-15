@@ -3,7 +3,6 @@ import { ProductsList } from './components/ProductsList';
 import { Footer } from './components/Footer';
 import { ShoppingCart } from './components/ShoppingCart';
 import { useState } from 'react';
-import { SkeletonTheme } from 'react-loading-skeleton';
 
 function App() {
 
@@ -122,26 +121,24 @@ function App() {
   }
 
   //total price
-  const totalCart = products.reduce((total: number, current) => {
+  const totalCart = products.reduce((total: any, current: any) => {
     return total + (current.price) * (current.quantity);
   }, 0)
 
   //total quantity
-  const totalQuantity = products.reduce((total: number, current) => {
+  const totalQuantity = products.reduce((total: any, current: any) => {
     return total + (current.quantity);
   }, 0)
   console.log(products)
   return (
-    <SkeletonTheme baseColor="#575655" highlightColor="#B3B3B3">
-      <div className='container'>
-        <Header handleClick={openCart} totalQuantity={totalQuantity} />
-        <ProductsList handleClick={handleItem} />
-        <Footer />
-        {isCartOpen &&
-          <ShoppingCart handleClick={closeCart} productsInCart={products} removeItem={removeItem} addMoreItens={addMoreItens} totalCart={totalCart} deleteItem={deleteItem} />
-        }
-      </div>
-    </SkeletonTheme >
+    <div className='container'>
+      <Header handleClick={openCart} totalQuantity={totalQuantity} />
+      <ProductsList handleClick={handleItem} />
+      <Footer />
+      {isCartOpen &&
+        <ShoppingCart handleClick={closeCart} productsInCart={products} removeItem={removeItem} addMoreItens={addMoreItens} totalCart={totalCart} deleteItem={deleteItem} />
+      }
+    </div>
   )
 }
 
