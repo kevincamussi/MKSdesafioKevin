@@ -68,4 +68,14 @@
         }
     }
 
+    @media (max-width: 400px) {
+        width: 70%;
+        margin: 16px auto;
+
+
+        .productCardButton {
+            margin-top: 30px;
+        }
+    }
+
 }

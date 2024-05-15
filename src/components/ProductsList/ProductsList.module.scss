@@ -1,7 +1,6 @@
 @use '../../styles/variables.scss' as variables;
 
 .products {
-    // padding: 70px 280px;
     padding: 30px 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, 20rem);
@@ -15,4 +14,10 @@
     @media screen and (min-width:1800px) {
         padding: 58px 200px;
     }
+
+    @media (max-width: 400px) {
+        width: 100%;
+        margin: 0 auto;
+    }
+
 }

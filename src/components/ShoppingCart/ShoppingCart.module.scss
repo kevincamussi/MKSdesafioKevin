@@ -62,16 +62,17 @@
         }
     }
 
-}
-
-
-@media (max-width: 400px) {
-    .shoppingCart {
+    @media (max-width: 400px) {
+        height: 100%;
+        width: 90%;
+        margin: 0 auto;
 
         .shoppingCartItem {
-            height: 320px;
+            width: 360px;
+            margin: 0 auto;
         }
     }
+
 }
 
 
@@ -79,7 +80,6 @@
 
 .finishBuyButton {
     width: 100%;
-
     position: absolute;
     bottom: 0;
     left: 0;
