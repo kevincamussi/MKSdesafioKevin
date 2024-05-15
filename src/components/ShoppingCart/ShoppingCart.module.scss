@@ -2,20 +2,29 @@
 
 .shoppingCart {
     background-color: variables.$blue;
-    width: 486px;
+    width: 460px;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     padding: 48px;
     font-family: Montserrat;
     box-shadow: -5px 0px 6px 0px #00000022;
-    overflow-y: scroll;
+
+
+    .shoppingCartItem {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 524px;
+        padding: 16px;
+        width: 400px;
+    }
 
     .shoppingCartText {
         font-style: 27px;
         font-weight: 700;
         margin-bottom: 64px;
+        text-align: left;
     }
 
     .shoppingCartButton {
@@ -26,31 +35,56 @@
 
     .totalCartPrice {
         @include variables.displayFlex;
-        // margin-top: 620px;
         font-size: 28px;
         font-weight: 700;
         bottom: 160px;
         justify-content: space-between;
     }
 
-    .finishBuyButton {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 40px;
-        background-color: variables.$black;
-        margin: 0 auto;
-        width: 100%;
-        border: none;
-        font-size: 28px;
-        font-weight: 700;
+    @media (max-width:500px) {
         text-align: center;
-        cursor: pointer;
+        width: 324px;
+        padding: 0;
 
-        &:hover {
-            background-color: lighten($color: variables.$black, $amount: 20%);
+        .shoppingCartText {
+            margin: 24px 16px;
+        }
+
+        .totalCartPrice {
+            justify-content: space-around;
+            padding: 0;
+            margin: 0;
+        }
+
+        .shoppingCartButton {
+            color: variables.$blue;
+            font-size: 24px;
         }
     }
+}
+
+
+
+
+.finishBuyButton {
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background-color: variables.$black;
+
+    border: none;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lighten($color: variables.$black, $amount: 20%);
+    }
+
 
 }

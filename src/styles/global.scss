@@ -18,3 +18,7 @@ body {
 .container {
     position: relative;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}

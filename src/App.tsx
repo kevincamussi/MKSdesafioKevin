@@ -3,15 +3,9 @@ import { ProductsList } from './components/ProductsList';
 import { Footer } from './components/Footer';
 import { ShoppingCart } from './components/ShoppingCart';
 import { useState } from 'react';
-// import { useQuery } from '@tanstack/react-query'
-
+import { SkeletonTheme } from 'react-loading-skeleton';
 
 function App() {
-  // const { data, isError, isLoading } = useQuery({
-  //   queryKey: ['produto'],
-  //   queryFn: buscaProduto
-  // });
-
 
   //open shopping Cart
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -138,14 +132,16 @@ function App() {
   }, 0)
   console.log(products)
   return (
-    <div className='container'>
-      <Header handleClick={openCart} totalQuantity={totalQuantity} />
-      <ProductsList handleClick={handleItem} />
-      <Footer />
-      {isCartOpen &&
-        <ShoppingCart handleClick={closeCart} productsInCart={products} removeItem={removeItem} addMoreItens={addMoreItens} totalCart={totalCart} deleteItem={deleteItem} />
-      }
-    </div>
+    <SkeletonTheme baseColor="#575655" highlightColor="#B3B3B3">
+      <div className='container'>
+        <Header handleClick={openCart} totalQuantity={totalQuantity} />
+        <ProductsList handleClick={handleItem} />
+        <Footer />
+        {isCartOpen &&
+          <ShoppingCart handleClick={closeCart} productsInCart={products} removeItem={removeItem} addMoreItens={addMoreItens} totalCart={totalCart} deleteItem={deleteItem} />
+        }
+      </div>
+    </SkeletonTheme >
   )
 }
 

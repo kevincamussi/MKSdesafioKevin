@@ -12,6 +12,7 @@
     position: relative;
 
 
+
     .shoppingCartItemButton {
         @include variables.buttonClose;
         top: -6px;
@@ -26,6 +27,9 @@
         font-weight: 400;
         color: variables.$primaryColor;
         font-size: 13px;
+        width: 7rem;
+        padding: 0;
+
     }
 
     .shoppingCartImg {
@@ -34,6 +38,10 @@
 
     .shoppingCartPrice {
         color: variables.$black;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 700;
+
     }
 
     .itemQuantity {
@@ -44,32 +52,84 @@
         border: 0.2px solid variables.$borderColor;
         padding: 2px;
         border-radius: 8px;
+        font-weight: 400;
+        font-size: 12px;
     }
 
     .minusButton {
         @include variables.quantityButton;
         border-right: 0.2px solid variables.$borderColor;
+
     }
 
     .plusButton {
         @include variables.quantityButton;
         border-left: 0.2px solid variables.$borderColor;
+
     }
 
     .itemsQuantity {
+
         span {
             color: variables.$black;
-        }
-
-        .quantity {
-            font-weight: 400;
             font-size: 12px;
-            text-align: center;
-            width: 50px;
-            height: 19px;
-            border: 1px solid variables.$borderColor;
-            border-radius: 4px;
-            border: 0.2px solid #BFBFBF
         }
     }
+
+
+
+}
+
+@media (max-width:500px) {
+    .shoppingCartItem {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+        margin: 16px 0;
+        padding-bottom: 80px;
+
+        .shoppingCartImg {
+            width: 100px;
+        }
+
+        .shoppingCartItemName {
+            width: auto;
+        }
+
+        .quantityBox {
+            float: left;
+            padding: 8px;
+            margin-top: 16px;
+            margin-left: 16px;
+        }
+
+        .itemsQuantity>span {
+            display: none;
+
+        }
+
+        .shoppingCartPrice {
+            color: variables.$white;
+            background-color: variables.$secondaryColor;
+            padding: 8px;
+            border-radius: 8px;
+            float: right;
+            margin-top: 16px;
+            margin-right: 16px;
+        }
+
+        .shoppingCartItemButton {
+            background-color: transparent;
+            color: variables.$black;
+            font-weight: 400;
+            font-size: 42px;
+            top: 0;
+            right: 20px;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
 }
