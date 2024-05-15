@@ -35,15 +35,13 @@
 
         &:hover {
             cursor: pointer;
-            border-color: variables.$black;
+            background-color: variables.$borderColor;
         }
 
         .cartImg {
             margin-right: 16px;
         }
     }
-
-
 
     @media screen and (max-width:500px) {
         .logo {
