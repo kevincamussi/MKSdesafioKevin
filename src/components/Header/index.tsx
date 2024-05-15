@@ -19,7 +19,7 @@ export const Header = ({ handleClick, totalQuantity }: IProps) => {
                 </div>
                 <div>
                     <button className={cartButton} onClick={handleClick}  >
-                        <img className={cartImg} src="./src/assets/Vector.png" alt="Carrinho de compras" />
+                        <img className={cartImg} src="src\Resources\Vector.png" alt="Carrinho de compras" />
                         {totalQuantity}
                     </button>
                 </div>

@@ -26,7 +26,7 @@ export const ProductCard = ({ handleClick }: IProps) => {
                             <p className={productDescription}>{description}</p>
                         </div>
                         <button className={productCardButton} onClick={() => handleClick({ id: id, name: name, price: price, photo: photo, quantity: +1 })}>
-                            <img className={productButtonImg} src="../../src/assets/shopping-bag.png" alt="Botão comprar" />
+                            <img className={productButtonImg} src='src\Resources\shopping-bag.png' alt="Botão comprar" />
                             Comprar
                         </button>
                     </div >
