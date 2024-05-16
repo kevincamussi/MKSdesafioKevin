@@ -47,8 +47,6 @@ export const ProductCard = ({ handleClick }: IProps) => {
                             </div>
                             <p className={productDescription}>{description}</p>
                         </div>
-                        <motion.button
-                        />
                         <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={productCardButton} onClick={() => handleClick({ id: id, name: name, price: price, photo: photo, quantity: +1 })}>
                             <svg className={productButtonImg} width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.737212" fill-rule="evenodd" clip-rule="evenodd" d="M3 1L1 3.7V13.15C1 13.8956 1.59695 14.5 2.33333 14.5H11.6667C12.403 14.5 13 13.8956 13 13.15V3.7L11 1H3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
