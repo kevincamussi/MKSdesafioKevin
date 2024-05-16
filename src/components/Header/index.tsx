@@ -9,11 +9,11 @@ export const Header = ({ handleClick, totalQuantity }: IProps) => {
         <>
             < header className={header} >
                 <div>
-                    {<h1 className={logo}   >MKS
+                    <h1 className={logo}   >MKS
                         <span className={logoText}>
                             Sistemas
                         </span>
-                    </h1>}
+                    </h1>
                 </div>
                 <div>
                     <button className={cartButton} onClick={handleClick}  >

@@ -1,14 +1,22 @@
 import styles from './ProductCard.module.scss';
-import { useFetch } from '../../../http/request';
-import { IProduct } from '../../../interface/IProducts';
 import { IProps } from '../../../interface/IProps';
 import { motion } from 'framer-motion';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+
 
 const { productInfo, productCard, productImg, productPriceBox, productName, productPrice, productDescription, productCardButton, productButtonImg } = styles;
 
 export const ProductCard = ({ handleClick }: IProps) => {
 
-    const { data } = useFetch<IProduct>('https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=id&orderBy=ASC');
+    const { data } = useQuery({
+        queryKey: ["cat"],
+        queryFn: async () => {
+            const res = await axios.get('https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=id&orderBy=ASC');
+            return res.data;
+        },
+    });
+
 
     const itemMotion = {
         hidden: { opacity: 0, x: 0 },
@@ -17,7 +25,6 @@ export const ProductCard = ({ handleClick }: IProps) => {
             opacity: 1,
         }
     }
-
     return (
         <>
             {data?.products.map((item: { id: any; photo: any; name: any; price: any; description: any; }) => {
@@ -41,7 +48,6 @@ export const ProductCard = ({ handleClick }: IProps) => {
                             <p className={productDescription}>{description}</p>
                         </div>
                         <motion.button
-
                         />
                         <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={productCardButton} onClick={() => handleClick({ id: id, name: name, price: price, photo: photo, quantity: +1 })}>
                             <svg className={productButtonImg} width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,4 +63,5 @@ export const ProductCard = ({ handleClick }: IProps) => {
             }
         </>
     )
+
 }
